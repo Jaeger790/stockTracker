@@ -6,6 +6,9 @@ from pathlib import Path
 from polygon import RESTClient
 
 
+API_KEY = None
+
+
 def main():
     parser = argparse.ArgumentParser(description="Download daily stock aggregates.")
     parser.add_argument("--ticker", default="GME")
@@ -13,7 +16,7 @@ def main():
     parser.add_argument("--end", default="2023-04-14")
     parser.add_argument("--output", type=Path, default=Path("stock-data.json"))
     args = parser.parse_args()
-    api_key = os.environ.get("POLYGON_API_KEY")
+    api_key = os.environ.get("POLYGON_API_KEY") or API_KEY
     if not api_key:
         parser.error("Set POLYGON_API_KEY before running.")
 
