@@ -3,7 +3,7 @@ from polygon import RESTClient
 import csv
 
 
-client = RESTClient("mZXdYhjKZkUldzr9imLPyuATSryrOlFS")
+client = RESTClient(None)
 
 aggs = client.get_aggs(
         "GME",
