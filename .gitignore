@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.swp
+.env
+.env.*
+!.env.example
+/stock-data.json
